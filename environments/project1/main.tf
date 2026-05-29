@@ -31,7 +31,7 @@ module "rg" {
 module "vnet" {
   source              = "../../modules/network"
   name                = var.vnet_name
-  resource_group_name = module.rg.id
+  resource_group_name = module.rg.name
   location            = local.location
   address_space       = var.vnet_address_space
 }
@@ -40,7 +40,7 @@ module "vnet" {
 module "subnet" {
   source               = "../../modules/subnet"
   name                 = var.subnet_name
-  resource_group_name  = module.rg.id
+  resource_group_name  = module.rg.name
   virtual_network_name = module.vnet.name
   address_prefix       = var.subnet_address_prefix
 }
@@ -49,6 +49,6 @@ module "subnet" {
 module "storage" {
   source              = "../../modules/storage"
   name                = var.storage_account_name
-  resource_group_name = module.rg.id
+  resource_group_name = module.rg.name
   location            = local.location
 }

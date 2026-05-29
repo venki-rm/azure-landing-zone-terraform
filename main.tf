@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "azurerm" {
-  features = {}
+  features {}
 }
 
 // Root is primarily a README-driven umbrella; environment-specific entrypoints live under `environments/`.
